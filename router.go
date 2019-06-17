@@ -9,10 +9,7 @@ type Route interface {
 	Delete(urlPath string, handler interface{})
 }
 
-type Middleware interface {
-	PreHandler(ctx *Context) error
-	PostHandle(ctx *Context, result interface{}) (interface{}, error)
-}
+
 
 type router struct {
 	middlewares []Middleware
