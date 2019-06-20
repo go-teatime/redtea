@@ -10,7 +10,6 @@ type Route interface {
 }
 
 
-
 type router struct {
 	middlewares []Middleware
 	rt mux.Router

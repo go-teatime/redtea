@@ -1,7 +1,10 @@
 package redtea
 
+import "github.com/gorilla/mux"
+
 type Web struct {
-	router *router
+	middlewares []Middleware
+	rt mux.Router
 }
 
 func NewWeb() *Web {
@@ -27,4 +30,8 @@ func (w *Web) Put(urlPath string, handler interface{}) {
 
 func (w *Web) Delete(urlPath string, handler interface{}) {
 	w.router.Delete(urlPath, handler)
+}
+
+func (w *Web) handlePath(method, urlPath string, handler interface{}) {
+
 }
